@@ -14,7 +14,7 @@
   height: 80px;
 }
 
-.node input {
+.nodeInput {
   font-size: 1rem;
   font-weight: 700;
   border: none;
@@ -26,6 +26,10 @@
   color: white;
 }
 
+.gptResponses {
+  font-size: 12px;
+  color: white;
+}
 
   
 .button {

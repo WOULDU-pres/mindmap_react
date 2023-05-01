@@ -5,10 +5,6 @@ import Connection from './components/Connection';
 import { generateResponse } from './openai';
 
 function App() {
-  ///////////////
-  const [input, setInput] = useState('');
-  const [output, setOutput] = useState([]);
-  ///////////////
 
   const [connections, setConnections] = useState([]); // [ { from: 'node-1', to: 'node-2' }
   const [nodes, setNodes] = useState([
@@ -21,17 +17,6 @@ function App() {
   ]);
 
 
-  ////////////// openai 입력창
-
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-  };
-
-  const handleButtonClick = async () => {
-    const gptResponses = await generateResponse(input);
-    setOutput(gptResponses);
-  };
-  //////////////
 
   const handleDrag = (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
@@ -81,30 +66,6 @@ function App() {
   return (
     <div className="App">
       
-      {/* */}
-      <h1>AI Brainstorming</h1>
-        <div>
-          <input
-            type="text"
-            value={input}
-            onChange={handleInputChange}
-            placeholder="Enter your text here"
-          />
-          <button onClick={handleButtonClick}>Brainstorm with GPT</button>
-        </div>
-        <div>
-          {output.length > 0 && (
-            <div>
-              <h2>GPT Responses:</h2>
-              <ul>
-                {output.map((response, index) => (
-                  <li key={index}>{response}</li>
-                ))}
-              </ul>
-            </div>
-          )}
-        </div>
-      {/* */}
 
       {nodes.map((node) => (
         <Node
@@ -118,6 +79,7 @@ function App() {
           onChange={handleChange}
           onAddNode={handleAddNode}
           onDeleteNode={handleDeleteNode}
+          generateResponse={generateResponse}
         />
       ))}
   
