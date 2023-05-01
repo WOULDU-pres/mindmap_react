@@ -28,34 +28,41 @@
 
 
   
-  .button {
-    border-radius: 50%;
-    background-color: white;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #ccc;
-  }
-  
-  .deleteButton {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-  }
-  
-  .addLeftButton {
-    position: absolute;
-    top: 50%;
-    left: -20px;
-    transform: translateY(-50%);
-  }
-  
-  .addRightButton {
-    position: absolute;
-    top: 50%;
-    right: -20px;
-    transform: translateY(-50%);
-  }
-  
+.button {
+  border-radius: 50%;
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+}
+
+.deleteButton {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+
+.addLeftButton {
+  position: absolute;
+  top: 50%;
+  left: -20px;
+  transform: translateY(-50%);
+}
+
+.addRightButton {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+}
+
+.addBrainstormButton {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 10px;
+}

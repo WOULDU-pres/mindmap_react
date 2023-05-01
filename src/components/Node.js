@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DeleteButton from './DeleteButton';
 import AddLeftButton from './AddLeftButton';
 import AddRightButton from './AddRightButton';
+import BrainstormButton from './BrainstormButton';
 import styles from './Node.module.css';
 
 const Node = ({
@@ -14,8 +15,11 @@ const Node = ({
   onChange,
   onAddNode,
   onDeleteNode,
+  openaiApiKey,
 }) => {
   const [hover, setHover] = useState(false);
+
+
   return (
     <div
     className={styles.node}

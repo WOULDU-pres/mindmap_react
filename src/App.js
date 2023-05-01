@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import './App.css';
 import Node from './components/Node';
 import Connection from './components/Connection';
-import Line from './components/Line';
 
 function App() {
-  const [connections, setConnections] = useState([]);
-  const [nodes, setNodes] = useState([{ id: 'node-1', content: '', x: 0, y: 0 }]);
+  const [connections, setConnections] = useState([]); // [ { from: 'node-1', to: 'node-2' }
+  const [nodes, setNodes] = useState([
+    {
+      id: "node-1",
+      content: "",
+      x: window.innerWidth / 2 - 50, // Subtract half of the node's width (assuming it's 100px)
+      y: window.innerHeight / 2 - 50, // Subtract half of the node's height (assuming it's 100px)
+    },
+  ]);
 
   const handleDrag = (e) => {
     e.dataTransfer.setData('text/plain', e.target.id);
@@ -37,39 +43,24 @@ function App() {
       id: `node-${nodes.length + 1}`,
       content: '',
       parentId: parentId,
+      side: side,
       x: side === 'left' ? parentNode.x - 350 : parentNode.x + 350,
-      y: parentNode.y + 200 * childNodes.length,
+      y: parentNode.y + 100 * childNodes.length,
     };
   
+    setConnections([...connections, { from: parentId, to: newNode.id, side }]);
     setNodes([...nodes, newNode]);
   };
+  
 
   const handleDeleteNode = (id) => {
     setNodes(nodes.filter((node) => node.id !== id));
   };
 
-  const renderLines = () => {
-    const lines = [];
-    nodes.forEach((node) => {
-      if (node.parentId) {
-        const parentNode = nodes.find((n) => n.id === node.parentId);
-        lines.push(
-          <Line
-            key={`line-${node.id}`}
-            x1={parentNode.x + 50}
-            y1={parentNode.y + 50}
-            x2={node.x + 50}
-            y2={node.y + 50}
-          />
-        );
-      }
-    });
-    return lines;
-  };
+  
 
   return (
     <div className="App">
-      {renderLines()}
       {nodes.map((node) => (
         <Node
           key={node.id}
@@ -82,12 +73,14 @@ function App() {
           onChange={handleChange}
           onAddNode={handleAddNode}
           onDeleteNode={handleDeleteNode}
+          openaiApiKey={'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'}
         />
       ))}
+  
+    {connections.map((connection, index) => (
+      <Connection key={index} from={connection.from} to={connection.to} side={connection.side} nodes={nodes} />
+    ))}
 
-      {connections.map((connection, index) => (
-        <Connection key={index} from={connection.from} to={connection.to} />
-      ))}
     </div>
   );
 }
