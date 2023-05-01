@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DeleteButton from './DeleteButton';
 import AddLeftButton from './AddLeftButton';
 import AddRightButton from './AddRightButton';
-import BrainstormButton from './BrainstormButton';
+// import BrainstormButton from './BrainstormButton';
 import styles from './Node.module.css';
 
 const Node = ({
@@ -15,7 +15,7 @@ const Node = ({
   onChange,
   onAddNode,
   onDeleteNode,
-  openaiApiKey,
+  onBrainstorm,
 }) => {
   const [hover, setHover] = useState(false);
 
@@ -46,6 +46,7 @@ const Node = ({
           {id !== 'node-1' && <DeleteButton id={id} onDeleteNode={onDeleteNode} />}
           <AddLeftButton id={id} onAddNode={onAddNode} />
           <AddRightButton id={id} onAddNode={onAddNode} />
+          <button onClick={() => onBrainstorm(content)}>Brainstorm with AI</button>
         </>
       )}
     </div>
