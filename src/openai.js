@@ -3,7 +3,7 @@ import axios from 'axios';
 export async function generateResponse(prompt) {
   try {
     const response = await axios.post(
-      'https://api.openai.com/v1/engines/text-davinci-003/completions',
+      'https://api.openai.com/v1/engines/text-davinci-002/completions',
       {
         prompt: `${prompt}\n\n1. `,
         max_tokens: 10,
