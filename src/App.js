@@ -3,6 +3,7 @@ import './App.css';
 import Node from './components/Node';
 import Connection from './components/Connection';
 import { generateResponse } from './openai';
+import { handleDragEnd, handleChange, handleAddNode, handleDeleteNode } from './utils/mindmapLogic';
 
 function App() {
 
@@ -22,66 +23,28 @@ function App() {
     e.dataTransfer.setData('text/plain', e.target.id);
   };
 
-  const handleDragEnd = (e) => {
-    const id = e.target.id;
-    const dx = e.clientX - e.target.getBoundingClientRect().left;
-    const dy = e.clientY - e.target.getBoundingClientRect().top;
 
-    setNodes(
-      nodes.map((node) =>
-        node.id === id ? { ...node, x: node.x + dx, y: node.y + dy } : node
-      )
-    );
-  };
 
-  const handleChange = (id, value) => {
-    setNodes(
-      nodes.map((node) => (node.id === id ? { ...node, content: value } : node))
-    );
-  };
-
-  const handleAddNode = (parentId, side) => {
-    const parentNode = nodes.find((node) => node.id === parentId);
-    const childNodes = nodes.filter((node) => node.parentId === parentId);
-    const newNode = {
-      id: `node-${nodes.length + 1}`,
-      content: '',
-      parentId: parentId,
-      side: side,
-      x: side === 'left' ? parentNode.x - 350 : parentNode.x + 350,
-      y: parentNode.y + 100 * childNodes.length,
-    };
-  
-    setConnections([...connections, { from: parentId, to: newNode.id, side }]);
-    setNodes([...nodes, newNode]);
-  };
-  
-
-  const handleDeleteNode = (id) => {
-    setNodes(nodes.filter((node) => node.id !== id));
-  };
-
-  
 
   return (
     <div className="App">
       
 
       {nodes.map((node) => (
-        <Node
-          key={node.id}
-          id={node.id}
-          content={node.content}
-          x={node.x}
-          y={node.y}
-          onDrag={handleDrag}
-          onDragEnd={handleDragEnd}
-          onChange={handleChange}
-          onAddNode={handleAddNode}
-          onDeleteNode={handleDeleteNode}
-          generateResponse={generateResponse}
-        />
-      ))}
+            <Node
+              key={node.id}
+              id={node.id}
+              content={node.content}
+              x={node.x}
+              y={node.y}
+              onDrag={handleDrag}
+              onDragEnd={(e) => handleDragEnd(e, nodes, setNodes)}
+              onChange={(id, value) => handleChange(id, value, nodes, setNodes)}
+              onAddNode={(parentId, side) => handleAddNode(parentId, side, nodes, setNodes, connections, setConnections)}
+              onDeleteNode={(id) => handleDeleteNode(id, nodes, setNodes)}
+              generateResponse={generateResponse}
+            />
+          ))}
   
     {connections.map((connection, index) => (
       <Connection key={index} from={connection.from} to={connection.to} side={connection.side} nodes={nodes} />
