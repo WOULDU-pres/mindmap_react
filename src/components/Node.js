@@ -49,7 +49,9 @@ const Node = ({
         />
         {hover && (
           <>
-            {id !== 'node-1' && <DeleteButton id={id} onDeleteNode={onDeleteNode} />}
+            {id !== 'node-1' && (
+              <DeleteButton id={id} onDeleteNode={onDeleteNode} />
+            )}
             <AddLeftButton id={id} onAddNode={onAddNode} />
             <AddRightButton id={id} onAddNode={onAddNode} />
             <BrainstormButton handleBrainstorm={handleBrainstorm} />
@@ -59,14 +61,14 @@ const Node = ({
       <div
         className={styles.gptResponses}
         style={{
-          left: x-40,
+          left: x - 40,
           top: y + 120,
           position: 'absolute',
         }}
       >
         {output.length > 0 && (
           <div>
-            <h4>GPT Responses:</h4>
+            <h4>Brainstorming results</h4>
             <ul>
               {output.map((response, index) => (
                 <li key={index}>{response}</li>

@@ -6,18 +6,18 @@ import MakingIssue from './components/MakingIssue';
 import Home from './components/Home';
 import Mindmap from './components/Mindmap';
 import Main from './Main';
+import CustomCursor from './components/CustomCursor';
 
 function App() {
-  
-
   return (
     <Router>
       <Main>
         <div className="App">
+          <CustomCursor />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/mindmap" element={<Mindmap />} />
-            <Route path="/making-issue" element={<MakingIssue />} />
+            <Route path="/making-issue/*" element={<MakingIssue />} />
             <Route path="/who-is-hyunwoo" element={<Hyunwoo />} />
           </Routes>
         </div>

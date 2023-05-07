@@ -1,0 +1,16 @@
+.issue2 {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.issue2 h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.issue2 p {
+  margin-bottom: 1rem;
+}

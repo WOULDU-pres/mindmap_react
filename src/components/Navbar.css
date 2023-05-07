@@ -1,34 +1,36 @@
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: #333;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333;
+}
 
 .navbar-container {
-display: flex;
-justify-content: space-between;
-align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .nav-menu {
-display: flex;
-list-style: none;
-padding: 0;
-margin: 0;
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-item {
-margin: 0 1rem;
+  margin: 0 1rem;
+  font-weight: 600;
 }
 
 .nav-links {
-color: #fff;
-text-decoration: none;
-font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
 }
 
 .nav-links:hover {
-color: #fff; /* 링크 클릭시 보라색으로 변하는 이슈 해결 */
+  color: wheat;
+  text-shadow: whitesmoke 0 0 5px; /* 링크 클릭시 보라색으로 변하는 이슈 해결 */
 }

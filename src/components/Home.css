@@ -1,81 +1,83 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.home-h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  animation: stretch 2s ease-in-out forwards;
+}
+
+.home-h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: fade-in-up 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 1rem;
+  opacity: 0;
+  animation: fade-in-up 1s ease-in-out forwards;
+  animation-delay: 1.5s;
+}
+
+.home-button {
+  background-color: #9384d1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.home-button:hover {
+  background-color: #9384d1;
+}
+
+.highlight {
+  color: yellow;
+}
+
+@keyframes stretch {
+  0% {
+    transform: translateY(2.5rem);
+    letter-spacing: normal;
   }
-  
-  h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    animation: stretch 2s ease-in-out forwards;
+  25% {
+    transform: translateY(2.5rem);
+    letter-spacing: 0.3rem;
   }
-  
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 2rem;
+  50% {
+    transform: translateY(2.5rem);
+    letter-spacing: normal;
+  }
+  65% {
+    transform: translateY(0rem);
+    letter-spacing: normal;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
     opacity: 0;
-    animation: fade-in-up 2s ease-in-out forwards;
-    animation-delay: 1s;
+    transform: translateY(-2.5rem);
   }
-  
-  .home-buttons {
-    display: flex;
-    gap: 1rem;
-    opacity: 0;
-    animation: fade-in-up 1s ease-in-out forwards;
-    animation-delay: 1.5s;
+  20% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .home-button {
-    background-color: purple;
-    color: #fff;
-    border: none;
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
-    text-decoration: none;
+  100% {
+    opacity: 1;
   }
-  
-  .home-button:hover {
-    background-color: #a000a0;
-  }
-  
-  .highlight {
-    color: yellow;
-  }
-  
-  @keyframes stretch {
-    0% {
-        transform: translateY(2.5rem);
-        letter-spacing: normal;
-    }
-    25% {
-        transform: translateY(2.5rem);
-        letter-spacing: 0.3rem;
-    }
-    50% {
-        transform: translateY(2.5rem);
-        letter-spacing: normal;
-    }
-    65% {
-        transform: translateY(0rem);
-        letter-spacing: normal;
-    }
-  }
-  
-  @keyframes fade-in-up {
-    0% {
-      opacity: 0;
-      transform: translateY(-2.5rem);
-    }
-    20% {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    100% {
-        opacity: 1;
-      }
-  }
-  
+}

@@ -1,0 +1,11 @@
+.custom-cursor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 3px solid wheat;
+  border-radius: 50%;
+  box-shadow: whitesmoke 0 0 5px;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9999;
+}

@@ -5,16 +5,18 @@ import './Home.css';
 function Home() {
   return (
     <div className="home-container">
-      <h1>Welcome to Hyunwoo's Playground</h1>
-      <h2>
+      <div className="home-h1" v>
+        Welcome to Hyunwoo's Playground
+      </div>
+      <div className="home-h2" v>
         Let's <span className="highlight">Brain</span>storm ideas with AI
-      </h2>
+      </div>
       <div className="home-buttons">
         <Link to="/mindmap">
           <button className="home-button">Let's go</button>
         </Link>
         <Link to="/who-is-hyunwoo">
-          <button className="home-button">Want to know about the Dev</button>
+          <button className="home-button">Who is Hyunwoo?</button>
         </Link>
       </div>
     </div>

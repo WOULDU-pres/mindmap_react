@@ -1,0 +1,29 @@
+.making-issue-container {
+  display: flex;
+}
+
+.issue-navigation {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  border-right: 2px solid wheat;
+  height: 100vh;
+}
+
+.issue-link {
+  text-decoration: none;
+  color: whitesmoke;
+  margin-bottom: 1rem;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.issue-link:hover {
+  color: wheat;
+  text-shadow: whitesmoke 0 0 5px;
+}
+
+.issue-content {
+  padding: 1rem;
+  flex-grow: 1;
+}
