@@ -13,15 +13,16 @@ function Navbar() {
             </Link>
           </li>
           <li className="nav-item">
-            <Link to="/who-is-hyunwoo" className="nav-links">
-              Who is Hyunwoo?
-            </Link>
-          </li>
-          <li className="nav-item">
             <Link to="/making-issue" className="nav-links">
               Making Issue
             </Link>
           </li>
+          <li className="nav-item">
+            <Link to="/who-is-hyunwoo" className="nav-links">
+              Who is Hyunwoo?
+            </Link>
+          </li>
+          
         </ul>
       </div>
     </nav>
