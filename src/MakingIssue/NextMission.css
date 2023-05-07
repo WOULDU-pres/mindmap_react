@@ -13,4 +13,10 @@
 
 .next-mission p {
   margin-bottom: 1rem;
+  color: white;
+}
+
+.missions {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid wheat;
 }

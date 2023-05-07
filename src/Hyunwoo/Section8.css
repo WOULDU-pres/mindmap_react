@@ -1,12 +1,12 @@
-.Section2 {
+.Section8 {
   width: 100%;
   height: 100vh;
   overflow: hidden;
   position: relative;
 }
 
-.Section2 .bg-image {
-  background-image: url('./002.jpg');
+.Section8 .bg-image {
+  background-image: url('./007.jpg');
   background-size: cover;
   background-position: center;
   width: 100%;
