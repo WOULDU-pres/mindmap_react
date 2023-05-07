@@ -5,11 +5,12 @@ const CustomCursor = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const onMouseMove = (e) => {
-    setCursorPosition({ x: e.clientX, y: e.clientY });
+    setCursorPosition({ x: e.clientX, y: e.clientY + window.scrollY });
   };
 
   useEffect(() => {
     document.addEventListener('mousemove', onMouseMove);
+
     return () => {
       document.removeEventListener('mousemove', onMouseMove);
     };

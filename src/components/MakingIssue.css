@@ -17,8 +17,18 @@
   font-size: 20px;
   font-weight: 700;
 }
-
 .issue-link:hover {
+  color: wheat;
+  text-shadow: whitesmoke 0 0 5px;
+}
+
+.issue-link-next-mission {
+  text-decoration: none;
+  margin-bottom: 1rem;
+  color: wheat;
+}
+
+.issue-link-next-mission:hover {
   color: wheat;
   text-shadow: whitesmoke 0 0 5px;
 }

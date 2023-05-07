@@ -1,0 +1,16 @@
+.next-mission {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.next-mission h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.next-mission p {
+  margin-bottom: 1rem;
+}
