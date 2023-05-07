@@ -3,7 +3,7 @@ import './Issue3.css';
 
 function Issue3() {
   return (
-    <div className="issue2">
+    <div className="issue3">
       <h2>
         Issue 3: Creating Navigation with Router, Routes, and Route without
         Switch

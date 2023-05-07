@@ -3,6 +3,7 @@ import { Link, Route, Routes, Outlet } from 'react-router-dom';
 import Issue1 from '../MakingIssue/Issue1';
 import Issue2 from '../MakingIssue/Issue2';
 import Issue3 from '../MakingIssue/Issue3';
+import Issue4 from '../MakingIssue/Issue4';
 import './MakingIssue.css';
 
 function MakingIssue() {
@@ -19,12 +20,16 @@ function MakingIssue() {
         <Link to="/making-issue/issue3" className="issue-link">
           Issue 3
         </Link>
+        <Link to="/making-issue/issue4" className="issue-link">
+          Issue 4
+        </Link>
       </div>
       <div className="issue-content">
         <Routes>
           <Route path="issue1" element={<Issue1 />} />
           <Route path="issue2" element={<Issue2 />} />
           <Route path="issue3" element={<Issue3 />} />
+          <Route path="issue4" element={<Issue4 />} />
         </Routes>
         <Outlet />
       </div>

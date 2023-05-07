@@ -54,7 +54,10 @@ const Node = ({
             )}
             <AddLeftButton id={id} onAddNode={onAddNode} />
             <AddRightButton id={id} onAddNode={onAddNode} />
-            <BrainstormButton handleBrainstorm={handleBrainstorm} />
+            <BrainstormButton
+              handleBrainstorm={handleBrainstorm}
+              content={content}
+            />
           </>
         )}
       </div>
