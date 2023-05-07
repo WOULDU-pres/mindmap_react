@@ -6,6 +6,8 @@ const Section2 = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
+    const currentRef = sectionRef.current;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,13 +17,13 @@ const Section2 = () => {
       { threshold: new Array(101).fill(0).map((_, i) => i * 0.01) },
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
