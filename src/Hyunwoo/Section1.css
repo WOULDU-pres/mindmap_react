@@ -7,7 +7,7 @@
 }
 
 .Section1 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: center;
   margin-bottom: 1rem;
 }
@@ -20,7 +20,7 @@
 
 .Award {
   display: block;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   color: #f6f1f1;
   text-shadow: wheat 0 0 5px;
